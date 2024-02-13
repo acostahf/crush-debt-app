@@ -6,10 +6,5 @@
 		}
 	},
 	"extends": "expo/tsconfig.base",
-	"include": [
-		"global.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"firebase-functions/functions.js"
-	]
+	"include": ["global.d.ts", "**/*.ts", "**/*.tsx"]
 }

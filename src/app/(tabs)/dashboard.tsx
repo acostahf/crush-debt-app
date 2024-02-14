@@ -4,6 +4,7 @@ import { Text, View } from "react-native";
 
 const dashboard = () => {
 	const { user } = useAppStore();
+
 	return (
 		<View>
 			<Text>dashboard</Text>

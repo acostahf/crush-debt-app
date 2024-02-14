@@ -4,14 +4,14 @@ import { getFirestore } from "firebase/firestore";
 
 // Initialize Firebase
 const firebaseConfig = {
-	apiKey: process.env.FB_API_KEY,
-	authDomain: process.env.AUTH_DOMAIN,
-	// databaseURL: process.env.PROJECT_ID,
-	projectId: process.env.PROJECT_ID,
-	storageBucket: process.env.STORAGE_BUCKET,
-	messagingSenderId: process.env.MESSAGEING_SENDER_ID,
-	appId: process.env.APP_ID,
-	measurementId: process.env.MEASUREMENT_ID,
+	apiKey: process.env.EXPO_PUBLIC_FB_API_KEY,
+	authDomain: process.env.EXPO_PUBLIC_AUTH_DOMAIN,
+	// databaseURL: process.env.EXPO_PUBLIC_PROJECT_ID,
+	projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
+	storageBucket: process.env.EXPO_PUBLIC_STORAGE_BUCKET,
+	messagingSenderId: process.env.EXPO_PUBLIC_MESSAGEING_SENDER_ID,
+	appId: process.env.EXPO_PUBLIC_APP_ID,
+	measurementId: process.env.EXPO_PUBLIC_MEASUREMENT_ID,
 };
 
 export const app = initializeApp(firebaseConfig);

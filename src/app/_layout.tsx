@@ -1,10 +1,11 @@
+import { View } from "react-native";
 import "../styles/global.css";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 
 export default function Layout() {
 	return (
-		<Stack>
-			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-		</Stack>
+		<View className="flex justify-center align-middle w-full h-full">
+			<Slot />
+		</View>
 	);
 }

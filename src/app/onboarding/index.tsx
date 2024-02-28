@@ -1,11 +1,17 @@
-import { Link, Redirect, Stack } from "expo-router";
+import SectionWrapper from "@/components/UI/SectionWrapper";
 import React from "react";
 import { Text, View } from "react-native";
 
-export default function Page() {
+const Page = () => {
 	return (
-		<View>
-			<Link href={"/onboarding/welcome"}>Welocme</Link>
-		</View>
+		<SectionWrapper>
+			<View>
+				<Text>How do you want to Crush Your debt?</Text>
+			</View>
+			<View>
+				<Text>OPTIONS HERE...</Text>
+			</View>
+		</SectionWrapper>
 	);
-}
+};
+export default Page;

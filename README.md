@@ -1,6 +1,6 @@
-# Crush Debt App
+# Crush Debt$ App
 
-![alt text](image-1.png)
+![alt text](logo-crush-debts.png)
 _A personal finance application to help you crush your debts!_
 
 ## 🚀 How to use
@@ -15,7 +15,7 @@ In your terminal run the following:
 `npm run start`
 
 **2. Test**
-If built successfully, use your phone to scan QR code :![alt text](image.png)
+If built successfully, use your phone to scan QR code :![alt text](crush-debts-run-expo.png)
 
 ## Tech Stack
 

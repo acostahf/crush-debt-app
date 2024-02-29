@@ -1,8 +1,8 @@
 import { View, Text, Pressable } from "react-native";
 import React, { useState } from "react";
-import NextStepBtn from "@/components/buttons/nextStepBtn";
+import NextStepBtn from "@/components/buttons/NextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
-import SquareBtn from "@/components/buttons/squareBtn";
+import SquareBtn from "@/components/buttons/SquareBtn";
 
 const Plan = () => {
 	const { data, setPlan } = useOnboardingStore();

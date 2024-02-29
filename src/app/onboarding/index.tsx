@@ -1,4 +1,4 @@
-import NextStepBtn from "@/components/buttons/nextStepBtn";
+import NextStepBtn from "@/components/buttons/NextStepBtn";
 import {
 	ContentContainer,
 	HeaderContainer,

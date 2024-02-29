@@ -1,4 +1,4 @@
-import NextStepBtn from "@/components/buttons/nextStepBtn";
+import NextStepBtn from "@/components/buttons/NextStepBtn";
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { signUp } from "@/services/auth";

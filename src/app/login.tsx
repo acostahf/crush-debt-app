@@ -1,19 +1,11 @@
-import { Text } from "react-native";
 import React from "react";
-import {
-	ContentContainer,
-	HeaderContainer,
-	ScreenContainer,
-} from "@/components/ui/Containers";
+import { ScreenContainer } from "@/components/ui/Containers";
+import FormAuth from "@/components/forms/FormAuth";
 
 const login = () => {
 	return (
 		<ScreenContainer>
-			<ContentContainer className="px-10">
-				<HeaderContainer>
-					<Text>LOGIN FORM HERE...</Text>
-				</HeaderContainer>
-			</ContentContainer>
+			<FormAuth />
 		</ScreenContainer>
 	);
 };

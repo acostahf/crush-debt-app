@@ -5,4 +5,9 @@ export enum OnboardingSteps {
 	"time" = 3,
 	"goals" = 4,
 	"plan" = 5,
+	"register" = 6,
+}
+export enum FormType {
+	"login" = "login",
+	"register" = "register",
 }

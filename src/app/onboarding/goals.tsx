@@ -31,15 +31,13 @@ const Goals = () => {
 
 	return (
 		<View className={styles.container}>
-			<Text className={styles.container}>Select Your Goals</Text>
-
+			<Text className={styles.title}>Select Your Goals</Text>
 			<SquareBtn
 				arr={goalsList}
 				item={goals}
 				setItem={toggleGoal}
 				multiple
 			/>
-
 			<NextStepBtn />
 		</View>
 	);
@@ -47,7 +45,7 @@ const Goals = () => {
 
 const styles = {
 	container: `flex-1 items-center justify-center p-4 bg-white`,
-	title: `text-2xl font-bold mb-6`,
+	title: `text-2xl font-bold mb-2`,
 };
 
 export default Goals;

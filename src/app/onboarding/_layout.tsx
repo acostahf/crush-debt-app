@@ -1,9 +1,8 @@
-import { Stack, Tabs } from "expo-router";
-import { View } from "react-native";
+import { Stack } from "expo-router";
 
 export default () => {
 	return (
-		<Stack>
+		<Stack screenOptions={{ headerTransparent: true, headerTitle: "" }}>
 			<Stack.Screen name="index" />
 			<Stack.Screen name="welcome" />
 			<Stack.Screen name="goals" />
@@ -11,6 +10,7 @@ export default () => {
 			<Stack.Screen name="personal" />
 			<Stack.Screen name="plan" />
 			<Stack.Screen name="time" />
+			<Stack.Screen name="register" />
 		</Stack>
 	);
 };

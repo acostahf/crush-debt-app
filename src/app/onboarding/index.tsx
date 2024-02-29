@@ -1,11 +1,35 @@
-import { Link, Redirect, Stack } from "expo-router";
+import NextStepBtn from "@/components/buttons/nextStepBtn";
+import {
+	ContentContainer,
+	HeaderContainer,
+	PageContainer,
+	SectionContainer,
+} from "@/components/ui/Containers";
+import { Link, router } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text } from "react-native";
 
 export default function Page() {
 	return (
-		<View>
-			<Link href={"/onboarding/welcome"}>Welocme</Link>
-		</View>
+		<PageContainer>
+			<ContentContainer>
+				<HeaderContainer>
+					<Text className={`text-lg`}>You got this</Text>
+					<Text className={`font-bold text-3xl text-center`}>
+						Let's Crush Debt together
+					</Text>
+				</HeaderContainer>
+				<SectionContainer>
+					<Button
+						title="Start Now"
+						onPress={() => router.replace("/onboarding/welcome")}
+					/>
+					<Button
+						title="TEST REGISTER"
+						onPress={() => router.replace("/onboarding/register")}
+					/>
+				</SectionContainer>
+			</ContentContainer>
+		</PageContainer>
 	);
 }

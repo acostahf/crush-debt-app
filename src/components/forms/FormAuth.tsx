@@ -43,6 +43,10 @@ const FormAuth = ({
 
 					case FormType["register"]:
 						res = await signUp(data.email, data.password);
+						//TODO: redirect to onbaording flow if successful or move to end of stack
+						if (res) {
+							router.replace("/onboarding/personal");
+						}
 						break;
 					default:
 						break;

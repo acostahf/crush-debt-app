@@ -24,6 +24,10 @@ export default function Page() {
 						title="Start Now"
 						onPress={() => router.replace("/onboarding/welcome")}
 					/>
+					<Button
+						title="TEST REGISTER"
+						onPress={() => router.replace("/onboarding/register")}
+					/>
 				</SectionContainer>
 			</ContentContainer>
 		</PageContainer>

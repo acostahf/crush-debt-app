@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { PageContainer } from "@/components/ui/Containers";
 import FormAuth from "@/components/forms/FormAuth";

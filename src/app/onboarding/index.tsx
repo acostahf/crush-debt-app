@@ -1,15 +1,17 @@
+import NextStepBtn from "@/components/buttons/nextStepBtn";
 import {
 	ContentContainer,
 	HeaderContainer,
-	ScreenContainer,
+	PageContainer,
 	SectionContainer,
 } from "@/components/ui/Containers";
+import { Link, router } from "expo-router";
 import React from "react";
-import { Text } from "react-native";
+import { Button, Text } from "react-native";
 
-const StartScreen = () => {
+export default function Page() {
 	return (
-		<ScreenContainer>
+		<PageContainer>
 			<ContentContainer>
 				<HeaderContainer>
 					<Text className={`text-lg`}>You got this</Text>
@@ -18,10 +20,16 @@ const StartScreen = () => {
 					</Text>
 				</HeaderContainer>
 				<SectionContainer>
-					<Text>OPTIONS HERE...</Text>
+					<Button
+						title="Start Now"
+						onPress={() => router.replace("/onboarding/welcome")}
+					/>
+					<Button
+						title="TEST REGISTER"
+						onPress={() => router.replace("/onboarding/register")}
+					/>
 				</SectionContainer>
 			</ContentContainer>
-		</ScreenContainer>
+		</PageContainer>
 	);
-};
-export default StartScreen;
+}

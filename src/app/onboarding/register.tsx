@@ -1,13 +1,14 @@
 import React from "react";
 import { PageContainer } from "@/components/ui/Containers";
 import FormAuth from "@/components/forms/FormAuth";
+import { FormType } from "@/types/enums";
 
-const login = () => {
+const register = () => {
 	return (
 		<PageContainer>
-			<FormAuth />
+			<FormAuth type={FormType["register"]} />
 		</PageContainer>
 	);
 };
 
-export default login;
+export default register;

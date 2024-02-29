@@ -10,6 +10,7 @@ export default () => {
 			<Stack.Screen name="personal" />
 			<Stack.Screen name="plan" />
 			<Stack.Screen name="time" />
+			<Stack.Screen name="register" />
 		</Stack>
 	);
 };

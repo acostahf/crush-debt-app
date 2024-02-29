@@ -1,7 +1,7 @@
 import {
 	ContentContainer,
 	HeaderContainer,
-	ScreenContainer,
+	PageContainer,
 } from "@/components/ui/Containers";
 import { Link, Stack } from "expo-router";
 import React from "react";
@@ -12,7 +12,7 @@ export default function Page() {
 
 export const HomeScreen = () => {
 	return (
-		<ScreenContainer>
+		<PageContainer>
 			<Stack.Screen
 				options={{
 					headerRight: () => <Link href={"/login"}>Login</Link>,
@@ -23,6 +23,6 @@ export const HomeScreen = () => {
 					<Link href={"/onboarding"}>Create Account</Link>
 				</HeaderContainer>
 			</ContentContainer>
-		</ScreenContainer>
+		</PageContainer>
 	);
 };

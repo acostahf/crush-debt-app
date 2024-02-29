@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
+import SquareBtn from "@/components/buttons/squareBtn";
 
 const Plan = () => {
 	const { data, setPlan } = useOnboardingStore();
@@ -10,28 +11,18 @@ const Plan = () => {
 	const methods = ["Snowball Method", "Avalanche Method"];
 
 	return (
-		<View className="flex-1 items-center justify-center p-4 bg-white">
-			<Text className="text-2xl font-bold mb-6">Choose Your Plan</Text>
+		<View className={styles.container}>
+			<Text className={styles.title}>Choose Your Plan</Text>
 
-			<View className="flex-row justify-center items-center">
-				{methods.map((method, i) => (
-					<Pressable
-						key={`method ${i}`}
-						className={`w-40 h-40 m-2 justify-center items-center rounded-lg border-2 ${
-							plan === method
-								? "bg-blue-400 border-blue-400"
-								: "bg-blue-200 border-transparent"
-						}`}
-						onPress={() => setPlan(method)}
-					>
-						<Text className="text-center px-2">{method}</Text>
-					</Pressable>
-				))}
-			</View>
-
+			<SquareBtn arr={methods} item={plan} setItem={setPlan} />
 			<NextStepBtn />
 		</View>
 	);
+};
+
+const styles = {
+	container: `flex-1 items-center justify-center p-4 bg-white`,
+	title: `text-2xl font-bold mb-6`,
 };
 
 export default Plan;

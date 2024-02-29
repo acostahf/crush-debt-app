@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
-import SingleInput from "@/components/buttons/inputs/singleInput";
+import SingleInput from "@/components/inputs/singleInput";
 import useOnboardingStore from "@/store/onboardingStore";
 
 const Personal = () => {

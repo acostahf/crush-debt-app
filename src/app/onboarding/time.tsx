@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
-import SingleInput from "@/components/buttons/inputs/singleInput";
+import SingleInput from "@/components/inputs/singleInput";
 import useOnboardingStore from "@/store/onboardingStore";
 
 const Time = () => {
@@ -10,8 +10,8 @@ const Time = () => {
 	const { workingHours, freeHours, familyAndFriendsHours } = data;
 
 	return (
-		<View className="flex-1 items-center justify-center p-4 bg-white">
-			<Text className="text-2xl font-bold mb-6">Time Allocation</Text>
+		<View className={styles.container}>
+			<Text className={styles.title}>Time Allocation</Text>
 
 			<SingleInput
 				set={setWorkingHours}
@@ -34,6 +34,11 @@ const Time = () => {
 			<NextStepBtn />
 		</View>
 	);
+};
+
+const styles = {
+	container: `flex-1 items-center justify-center p-4 bg-white`,
+	title: `text-2xl font-bold mb-6`,
 };
 
 export default Time;

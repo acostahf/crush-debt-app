@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
+import SquareBtn from "@/components/buttons/squareBtn";
 
 const Goals = () => {
 	const { data, setGoals } = useOnboardingStore();
@@ -29,28 +30,24 @@ const Goals = () => {
 	}, [selectedGoals]);
 
 	return (
-		<View className="flex-1 items-center justify-center p-4 bg-white">
-			<Text className="text-2xl font-bold mb-6">Select Your Goals</Text>
+		<View className={styles.container}>
+			<Text className={styles.container}>Select Your Goals</Text>
 
-			<View className="flex-row flex-wrap justify-center items-center">
-				{goalsList.map((goal, i) => (
-					<Pressable
-						key={`goal ${i}`}
-						className={`w-40 h-40 m-2 justify-center items-center rounded-lg border-2 ${
-							selectedGoals.includes(goal)
-								? "bg-blue-400 border-blue-400"
-								: "bg-blue-200 border-transparent"
-						}`}
-						onPress={() => toggleGoal(goal)}
-					>
-						<Text className="text-center px-2">{goal}</Text>
-					</Pressable>
-				))}
-			</View>
+			<SquareBtn
+				arr={goalsList}
+				item={goals}
+				setItem={toggleGoal}
+				multiple
+			/>
 
 			<NextStepBtn />
 		</View>
 	);
+};
+
+const styles = {
+	container: `flex-1 items-center justify-center p-4 bg-white`,
+	title: `text-2xl font-bold mb-6`,
 };
 
 export default Goals;

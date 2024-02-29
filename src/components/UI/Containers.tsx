@@ -7,7 +7,7 @@ interface ContainerProps {
 	children?: Array<React.JSX.Element> | React.JSX.Element;
 }
 
-export const ScreenContainer = ({ className, children }: ContainerProps) => {
+export const PageContainer = ({ className, children }: ContainerProps) => {
 	const defaultStyles = "container mx-auto";
 	return (
 		<SafeAreaView className={`${defaultStyles} ${className}`}>

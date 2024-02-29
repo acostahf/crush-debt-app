@@ -1,12 +1,12 @@
 import React from "react";
-import { ScreenContainer } from "@/components/ui/Containers";
+import { PageContainer } from "@/components/ui/Containers";
 import FormAuth from "@/components/forms/FormAuth";
 
 const login = () => {
 	return (
-		<ScreenContainer>
+		<PageContainer>
 			<FormAuth />
-		</ScreenContainer>
+		</PageContainer>
 	);
 };
 

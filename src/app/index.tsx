@@ -1,17 +1,28 @@
-import { Link, Redirect, Stack } from "expo-router";
+import {
+	ContentContainer,
+	HeaderContainer,
+	ScreenContainer,
+} from "@/components/ui/Containers";
+import { Link, Stack } from "expo-router";
 import React from "react";
-import { View, Text } from "react-native";
 
 export default function Page() {
+	return <HomeScreen />;
+}
+
+export const HomeScreen = () => {
 	return (
-		<View className="flex gap-7 h-full w-full items-center justify-center">
+		<ScreenContainer>
 			<Stack.Screen
 				options={{
 					headerRight: () => <Link href={"/login"}>Login</Link>,
 				}}
 			/>
-
-			<Link href={"/onboarding"}>Create Account</Link>
-		</View>
+			<ContentContainer className="px-9">
+				<HeaderContainer>
+					<Link href={"/onboarding"}>Create Account</Link>
+				</HeaderContainer>
+			</ContentContainer>
+		</ScreenContainer>
 	);
-}
+};

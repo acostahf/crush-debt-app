@@ -1,12 +1,20 @@
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 import React from "react";
-import SectionWrapper from "@/components/UI/SectionWrapper";
+import {
+	ContentContainer,
+	HeaderContainer,
+	ScreenContainer,
+} from "@/components/ui/Containers";
 
 const login = () => {
 	return (
-		<SectionWrapper>
-			<Text>LOGIN FORM HERE...</Text>
-		</SectionWrapper>
+		<ScreenContainer>
+			<ContentContainer className="px-10">
+				<HeaderContainer>
+					<Text>LOGIN FORM HERE...</Text>
+				</HeaderContainer>
+			</ContentContainer>
+		</ScreenContainer>
 	);
 };
 

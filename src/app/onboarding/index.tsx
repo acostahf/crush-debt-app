@@ -1,17 +1,27 @@
-import SectionWrapper from "@/components/UI/SectionWrapper";
+import {
+	ContentContainer,
+	HeaderContainer,
+	ScreenContainer,
+	SectionContainer,
+} from "@/components/ui/Containers";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 
-const Page = () => {
+const StartScreen = () => {
 	return (
-		<SectionWrapper>
-			<View>
-				<Text>How do you want to Crush Your debt?</Text>
-			</View>
-			<View>
-				<Text>OPTIONS HERE...</Text>
-			</View>
-		</SectionWrapper>
+		<ScreenContainer>
+			<ContentContainer>
+				<HeaderContainer>
+					<Text className={`text-lg`}>You got this</Text>
+					<Text className={`font-bold text-3xl text-center`}>
+						Let's Crush Debt together
+					</Text>
+				</HeaderContainer>
+				<SectionContainer>
+					<Text>OPTIONS HERE...</Text>
+				</SectionContainer>
+			</ContentContainer>
+		</ScreenContainer>
 	);
 };
-export default Page;
+export default StartScreen;

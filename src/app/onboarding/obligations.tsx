@@ -1,9 +1,11 @@
 import { View, Text, TextInput, Pressable } from "react-native";
 import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
+import useOnboardingStore from "@/store/onboardingStore";
 
 const Obligations = () => {
-	const [dependents, setDependents] = useState("");
+	const { data, setObligations } = useOnboardingStore();
+	const { obligations } = data;
 
 	const options = ["1", "2", "3", "4", ">=5"];
 
@@ -21,9 +23,9 @@ const Obligations = () => {
 					<Pressable
 						key={index}
 						className={`w-1/3 h-20 m-2 bg-blue-200 justify-center items-center rounded-lg ${
-							dependents === option ? "bg-blue-400" : ""
+							obligations === option ? "bg-blue-400" : ""
 						}`}
-						onPress={() => setDependents(option)}
+						onPress={() => setObligations(option)}
 					>
 						<Text className="text-xl font-semibold">{option}</Text>
 					</Pressable>

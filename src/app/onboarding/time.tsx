@@ -2,11 +2,12 @@ import { View, Text, TextInput } from "react-native";
 import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/nextStepBtn";
 import SingleInput from "@/components/buttons/inputs/singleInput";
+import useOnboardingStore from "@/store/onboardingStore";
 
 const Time = () => {
-	const [workingHours, setWorkingHours] = useState("");
-	const [freeHours, setFreeHours] = useState("");
-	const [familyAndFriendsHours, setFamilyAndFriendsHours] = useState("");
+	const { data, setFreeHours, setWorkingHours, setFamilyAndFriendsHours } =
+		useOnboardingStore();
+	const { workingHours, freeHours, familyAndFriendsHours } = data;
 
 	return (
 		<View className="flex-1 items-center justify-center p-4 bg-white">

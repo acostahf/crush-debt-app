@@ -1,4 +1,4 @@
-import NextStepBtn from "@/components/buttons/nextStepBtn";
+import NextStepBtn from "@/components/buttons/NextStepBtn";
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { signUp } from "@/services/auth";
@@ -20,6 +20,12 @@ const Welcome = () => {
 			<NextStepBtn />
 		</View>
 	);
+};
+
+const styles = {
+	container: `flex-1 items-center justify-center p-4 bg-white`,
+	title: `text-4xl font-bold text-center mb-6`,
+	subtitle: `text-lg text-center mb-8`,
 };
 
 export default Welcome;

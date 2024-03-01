@@ -15,16 +15,31 @@ export const PageContainer = ({ className, children }: ContainerProps) => {
 		</SafeAreaView>
 	);
 };
-export const SectionContainer = ({ className, children }: ContainerProps) => {
+export const SectionContainer = ({
+	className,
+	children,
+}: ContainerProps) => {
 	const defaultStyles = "px-5 py-10";
-	return <View className={`${defaultStyles} ${className}`}>{children}</View>;
+	return (
+		<View className={`${defaultStyles} ${className}`}>{children}</View>
+	);
 };
-export const ContentContainer = ({ className, children }: ContainerProps) => {
+export const ContentContainer = ({
+	className,
+	children,
+}: ContainerProps) => {
 	const defaultStyles = "py-10";
-	return <View className={`${defaultStyles} ${className}`}>{children}</View>;
+	return (
+		<View className={`${defaultStyles} ${className}`}>{children}</View>
+	);
 };
-export const HeaderContainer = ({ className, children }: ContainerProps) => {
+export const HeaderContainer = ({
+	className,
+	children,
+}: ContainerProps) => {
 	const defaultStyles =
 		"flex flex-col justify-center items-center text-center px-10 py-10";
-	return <View className={`${defaultStyles} ${className}`}>{children}</View>;
+	return (
+		<View className={`${defaultStyles} ${className}`}>{children}</View>
+	);
 };

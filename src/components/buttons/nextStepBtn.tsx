@@ -9,6 +9,10 @@ const NextStepBtn = () => {
 
 	const handleNext = () => {
 		const nextStep = OnboardingSteps[OnboardingSteps[parsePathname] + 1];
+		if (OnboardingSteps[parsePathname] === 5) {
+			router.push("/dashboard");
+			return;
+		}
 		router.push(`/onboarding/${nextStep}`);
 	};
 

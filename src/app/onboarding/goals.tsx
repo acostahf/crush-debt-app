@@ -3,18 +3,12 @@ import React, { useEffect, useState } from "react";
 import NextStepBtn from "@/components/buttons/NextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
 import SquareBtn from "@/components/buttons/SquareBtn";
+import { en } from "@/constants";
 
 const Goals = () => {
 	const { data, setGoals } = useOnboardingStore();
 	const { goals } = data;
-	const goalsList = [
-		"Save Money",
-		"Invest",
-		"Pay Off Debt",
-		"Travel More",
-		"Retire Early",
-	];
-
+	const { goalsList, title } = en.onboarding.goals;
 	const [selectedGoals, setSelectedGoals] = useState(goals);
 
 	const toggleGoal = (goal) => {
@@ -31,7 +25,7 @@ const Goals = () => {
 
 	return (
 		<View className={styles.container}>
-			<Text className={styles.title}>Select Your Goals</Text>
+			<Text className={styles.title}>{title}</Text>
 			<SquareBtn
 				arr={goalsList}
 				item={goals}

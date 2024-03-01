@@ -1,4 +1,3 @@
-import NextStepBtn from "@/components/buttons/NextStepBtn";
 import {
 	ContentContainer,
 	HeaderContainer,
@@ -8,24 +7,26 @@ import {
 import { Link, router } from "expo-router";
 import React from "react";
 import { Button, Text } from "react-native";
+import { en } from "@/constants";
 
 export default function Page() {
+	const { subtitle, title, buttons } = en.onboarding.welcome;
 	return (
 		<PageContainer>
 			<ContentContainer>
 				<HeaderContainer>
-					<Text className={`text-lg`}>You got this</Text>
+					<Text className={`text-lg`}>{title}</Text>
 					<Text className={`font-bold text-3xl text-center`}>
-						Let's Crush Debt together
+						{subtitle}
 					</Text>
 				</HeaderContainer>
 				<SectionContainer>
 					<Button
-						title="Start Now"
+						title={buttons.startNow}
 						onPress={() => router.replace("/onboarding/welcome")}
 					/>
 					<Button
-						title="TEST REGISTER"
+						title={buttons.register}
 						onPress={() => router.replace("/onboarding/register")}
 					/>
 				</SectionContainer>

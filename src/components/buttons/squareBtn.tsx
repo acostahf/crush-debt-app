@@ -1,12 +1,6 @@
+import { SquareBtnProps } from "@/types";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
-
-interface SquareBtnProps {
-	arr: string[];
-	item: string | string[];
-	setItem: (value: string) => void;
-	multiple?: boolean;
-}
 
 const SquareBtn = ({ arr, item, setItem, multiple }: SquareBtnProps) => {
 	if (multiple) {

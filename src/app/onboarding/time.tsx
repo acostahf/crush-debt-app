@@ -3,29 +3,31 @@ import React from "react";
 import NextStepBtn from "@/components/buttons/NextStepBtn";
 import SingleInput from "@/components/inputs/SingleInput";
 import useOnboardingStore from "@/store/onboardingStore";
+import { en } from "@/constants";
 
 const Time = () => {
 	const { data, setFreeHours, setWorkingHours, setFamilyAndFriendsHours } =
 		useOnboardingStore();
 	const { workingHours, freeHours, familyAndFriendsHours } = data;
+	const { title, inputs } = en.onboarding.time;
 
 	return (
 		<View className={styles.container}>
-			<Text className={styles.title}>Time Allocation</Text>
+			<Text className={styles.title}>{title}</Text>
 			<SingleInput
 				set={setWorkingHours}
 				value={workingHours}
-				label="Hours Spent Working"
+				label={inputs.working}
 			/>
 			<SingleInput
 				set={setFreeHours}
 				value={freeHours}
-				label="Hours of Free Time"
+				label={inputs.free}
 			/>
 			<SingleInput
 				set={setFamilyAndFriendsHours}
 				value={familyAndFriendsHours}
-				label="Time with Friends & Family"
+				label={inputs.familyAndFriends}
 			/>
 			<NextStepBtn />
 		</View>

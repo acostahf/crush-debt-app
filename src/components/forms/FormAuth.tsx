@@ -5,7 +5,7 @@ import colors from "../../styles/colors";
 import { login, signUp } from "@/services/auth";
 import { IFormAuthProps, IFormFieldsRegister } from "@/types";
 import { User } from "firebase/auth";
-import { FormContent } from "@/constants";
+import { en } from "@/constants";
 import { FormType } from "@/types/enums";
 import {
 	ContentContainer,
@@ -16,7 +16,7 @@ import { router } from "expo-router";
 
 const FormAuth = ({
 	type = FormType["login"],
-	title = FormContent[type].title,
+	title = en.FormContent[type].title,
 }: IFormAuthProps) => {
 	const {
 		register,
@@ -31,6 +31,9 @@ const FormAuth = ({
 			password: "",
 		},
 	});
+
+	const FormContent = en.FormContent;
+
 	const onSubmit = async (data: IFormFieldsRegister) => {
 		try {
 			if (data) {

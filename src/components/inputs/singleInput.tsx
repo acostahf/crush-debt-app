@@ -1,11 +1,6 @@
 import { View, Text, TextInput } from "react-native";
 import React from "react";
-
-interface SingleInputProps {
-	set: (value: string) => void;
-	value: string;
-	label: string;
-}
+import { SingleInputProps } from "@/types";
 
 const SingleInput = ({ set, value, label }: SingleInputProps) => {
 	return (

@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/NextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
 import SquareBtn from "@/components/buttons/SquareBtn";
+import { en } from "@/constants";
 
 const Plan = () => {
 	const { data, setPlan } = useOnboardingStore();
 	const { plan } = data;
-
-	const methods = ["Snowball Method", "Avalanche Method"];
+	const { title, methods } = en.onboarding.plan;
 
 	return (
 		<View className={styles.container}>
-			<Text className={styles.title}>Choose Your Plan</Text>
+			<Text className={styles.title}>{title}</Text>
 
 			<SquareBtn arr={methods} item={plan} setItem={setPlan} />
 			<NextStepBtn />

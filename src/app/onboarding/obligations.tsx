@@ -3,19 +3,17 @@ import React, { useState } from "react";
 import NextStepBtn from "@/components/buttons/NextStepBtn";
 import useOnboardingStore from "@/store/onboardingStore";
 import SquareBtn from "@/components/buttons/SquareBtn";
+import { en } from "@/constants";
 
 const Obligations = () => {
 	const { data, setObligations } = useOnboardingStore();
 	const { obligations } = data;
-
-	const options = ["1", "2", "3", "4", ">=5"];
+	const { title, subtitle, options } = en.onboarding.obligations;
 
 	return (
 		<View className={styles.container}>
-			<Text className={styles.title}>Household Obligations</Text>
-			<Text className={styles.title}>
-				How many dependents do you have?
-			</Text>
+			<Text className={styles.title}>{title}</Text>
+			<Text className={styles.title}>{subtitle}</Text>
 
 			<SquareBtn
 				arr={options}

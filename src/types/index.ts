@@ -12,10 +12,6 @@ export type IFormAuthProps = {
 	title?: string;
 	type?: FormType;
 };
-export interface IFormFieldsRegister {
-	email: string;
-	password: string;
-}
 
 export interface SquareBtnProps {
 	arr: string[];

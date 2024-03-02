@@ -15,7 +15,6 @@ export const signUp = async (email, password) => {
 		const user = userCredential.user;
 		return user;
 	} catch (error) {
-		console.log("User not Registered", error);
 		throw error;
 	}
 };

@@ -1,10 +1,8 @@
-import { Text, View, TextInput, Pressable, Button } from "react-native";
-import { useForm, Controller } from "react-hook-form";
+import { Text, View, Pressable, Button } from "react-native";
+import { useForm } from "react-hook-form";
 import Constants from "expo-constants";
 import colors from "../../styles/colors";
-import { login, signUp } from "@/services/auth";
-import { IFormAuthProps, IFormFieldsRegister } from "@/types";
-import { User } from "firebase/auth";
+import { IFormAuthProps } from "@/types";
 import { en } from "@/constants";
 import { FormType } from "@/types/enums";
 import {
@@ -13,59 +11,19 @@ import {
 	SectionContainer,
 } from "../ui/Containers";
 import { router } from "expo-router";
+import CustomInput from "../inputs/CustomInput";
+import { onSubmitAuth } from "@/utils";
 
 const FormAuth = ({
 	type = FormType["login"],
 	title = en.FormContent[type].title,
 }: IFormAuthProps) => {
 	const {
-		register,
-		setValue,
 		handleSubmit,
 		control,
-		reset,
 		formState: { errors },
-	} = useForm({
-		defaultValues: {
-			email: "",
-			password: "",
-		},
-	});
-
+	} = useForm();
 	const FormContent = en.FormContent;
-
-	const onSubmit = async (data: IFormFieldsRegister) => {
-		try {
-			if (data) {
-				let res: User | null;
-				console.log(JSON.stringify(data));
-				switch (type) {
-					case FormType["login"]:
-						res = await login(data.email, data.password);
-						break;
-
-					case FormType["register"]:
-						res = await signUp(data.email, data.password);
-						//TODO: redirect to onbaording flow if successful or move to end of stack
-						if (res) {
-							router.replace("/onboarding/personal");
-						}
-						break;
-					default:
-						break;
-				}
-				console.log("User Data:", res);
-			}
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	const onChange = (arg) => {
-		return {
-			value: arg.nativeEvent.text,
-		};
-	};
 
 	return (
 		<SectionContainer>
@@ -73,39 +31,26 @@ const FormAuth = ({
 				<Text className={styles.headerText}>{title}</Text>
 			</HeaderContainer>
 			<ContentContainer className={styles.container}>
-				<Controller
-					control={control}
-					render={({ field: { onChange, onBlur, value } }) => (
-						<TextInput
-							placeholder="name@example.com"
-							placeholderTextColor={colors.neutral[500]}
-							className={styles.input}
-							onBlur={onBlur}
-							onChangeText={(value) => onChange(value)}
-							value={value}
-						/>
-					)}
+				<CustomInput
 					name="email"
-					rules={{ required: true }}
-				/>
-				<Controller
+					placeholder="email"
 					control={control}
-					render={({ field: { onChange, onBlur, value } }) => (
-						<TextInput
-							placeholder="password"
-							placeholderTextColor={colors.neutral[500]}
-							className={styles.input}
-							onBlur={onBlur}
-							onChangeText={(value) => onChange(value)}
-							value={value}
-						/>
-					)}
+					rules={FormContent.validation.email.rules}
+				/>
+				<CustomInput
 					name="password"
-					rules={{ required: true }}
+					placeholder="password"
+					control={control}
+					secureTextEntry
+					rules={
+						type === FormType["register"]
+							? FormContent.validation.newPassword.rules
+							: FormContent.validation.password.rules
+					}
 				/>
 				<View className={styles.buttonContainer}>
 					<Button
-						onPress={handleSubmit(onSubmit)}
+						onPress={handleSubmit((data) => onSubmitAuth(type, data))}
 						title={FormContent[type].btnPrimaryText}
 					/>
 					<View className="flex w-full flex-row justify-start items-center gap-2">
@@ -127,9 +72,8 @@ const FormAuth = ({
 };
 
 const styles = {
-	container: `flex flex-col gap-10 justify-center items-center pt-${Constants.statusBarHeight} max-w-350`,
+	container: `flex flex-col items-center gap-10 pt-${Constants.statusBarHeight} max-w-350`,
 	headerText: `font-bold text-3xl text-center`,
-	input: `border-1 bg-white border-${colors.neutral[300]} p-5 text-${colors.neutral[700]} rounded-4 w-full`,
 	buttonContainer: "flex flex-col justify-center items-center gap-2",
 };
 

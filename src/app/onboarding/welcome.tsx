@@ -2,6 +2,7 @@ import NextStepBtn from "@/components/buttons/NextStepBtn";
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { signUp } from "@/services/auth";
+import { PageContainer } from "@/components/ui/Containers";
 
 const Welcome = () => {
 	const handleSignUP = async () => {
@@ -14,11 +15,11 @@ const Welcome = () => {
 		}
 	};
 	return (
-		<View>
+		<PageContainer>
 			<Text>welcome</Text>
 			<Button title="signup" onPress={() => handleSignUP()} />
 			<NextStepBtn />
-		</View>
+		</PageContainer>
 	);
 };
 

@@ -42,7 +42,11 @@ const FormAuth = ({
 					placeholder="password"
 					control={control}
 					secureTextEntry
-					rules={FormContent.validation.password.rules}
+					rules={
+						type === FormType["register"]
+							? FormContent.validation.newPassword.rules
+							: FormContent.validation.password.rules
+					}
 				/>
 				<View className={styles.buttonContainer}>
 					<Button

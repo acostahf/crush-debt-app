@@ -35,6 +35,16 @@ export const login = async (email, password) => {
 	}
 };
 
+export const signout = async () => {
+	try {
+		const resp = await auth.signOut();
+		console.log("User Logged Out", resp);
+	} catch (error) {
+		console.log("User not Logged Out", error);
+		throw error;
+	}
+};
+
 // export const emailVerification = async () => {
 // 	const user = auth.currentUser;
 // 	try {

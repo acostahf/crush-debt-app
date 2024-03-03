@@ -39,5 +39,9 @@ export const HomeScreen = () => {
 };
 
 export const AuthenticatedScreen = () => {
-	return <Dashboard />;
+	return (
+		<PageContainer>
+			<Dashboard />
+		</PageContainer>
+	);
 };

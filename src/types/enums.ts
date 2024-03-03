@@ -1,11 +1,10 @@
 export enum OnboardingSteps {
-	"welcome" = 0,
-	"personal" = 1,
-	"obligations" = 2,
-	"time" = 3,
-	"goals" = 4,
-	"plan" = 5,
-	"register" = 6,
+	"personal" = 0,
+	"obligations" = 1,
+	"time" = 2,
+	"goals" = 3,
+	"plan" = 4,
+	"register" = 5,
 }
 export enum FormType {
 	"login" = "login",

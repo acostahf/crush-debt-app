@@ -1,10 +1,13 @@
-import { auth } from "@/services/firebaseConfig";
+import { auth, db } from "@/services/firebaseConfig";
+import { OnboardingProps } from "@/types";
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
-export const signUp = async (email, password) => {
+export const signUp = async (props: OnboardingProps) => {
+	const { email, password } = props;
 	try {
 		const userCredential = await createUserWithEmailAndPassword(
 			auth,
@@ -13,6 +16,13 @@ export const signUp = async (email, password) => {
 		);
 		// await emailVerification();
 		const user = userCredential.user;
+
+		// Add user document in Firestore
+		const userRef = doc(db, "users", user.uid);
+		await setDoc(userRef, {
+			...props,
+			createdAt: new Date(),
+		});
 		return user;
 	} catch (error) {
 		console.log("User not Registered", error);

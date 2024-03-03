@@ -23,11 +23,11 @@ export default function Page() {
 				<SectionContainer>
 					<Button
 						title={buttons.startNow}
-						onPress={() => router.replace("/onboarding/welcome")}
+						onPress={() => router.replace("/onboarding/personal")}
 					/>
 					<Button
 						title={buttons.register}
-						onPress={() => router.replace("/onboarding/register")}
+						onPress={() => router.replace("/onboarding/personal")}
 					/>
 				</SectionContainer>
 			</ContentContainer>

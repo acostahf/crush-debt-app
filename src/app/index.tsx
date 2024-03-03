@@ -3,11 +3,22 @@ import {
 	HeaderContainer,
 	PageContainer,
 } from "@/components/ui/Containers";
-import { Link, Stack } from "expo-router";
-import React from "react";
+import { Link, Redirect, Stack } from "expo-router";
+import React, { useEffect, useState } from "react";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "@/services/firebaseConfig";
+import Dashboard from "./(tabs)/dashboard";
 
 export default function Page() {
-	return <HomeScreen />;
+	const [user, setUser] = useState<User | null>(null);
+
+	useEffect(() => {
+		onAuthStateChanged(auth, (user) => {
+			setUser(user);
+		});
+	}, []);
+
+	return <>{user ? <AuthenticatedScreen /> : <HomeScreen />}</>;
 }
 
 export const HomeScreen = () => {
@@ -25,4 +36,8 @@ export const HomeScreen = () => {
 			</ContentContainer>
 		</PageContainer>
 	);
+};
+
+export const AuthenticatedScreen = () => {
+	return <Dashboard />;
 };

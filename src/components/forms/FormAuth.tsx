@@ -13,6 +13,7 @@ import {
 	SectionContainer,
 } from "../ui/Containers";
 import { router } from "expo-router";
+import useOnboardingStore from "@/store/onboardingStore";
 
 const FormAuth = ({
 	type = FormType["login"],
@@ -33,6 +34,7 @@ const FormAuth = ({
 	});
 
 	const FormContent = en.FormContent;
+	const { data: onboardingData } = useOnboardingStore();
 
 	const onSubmit = async (data: IFormFieldsRegister) => {
 		try {
@@ -45,11 +47,11 @@ const FormAuth = ({
 						break;
 
 					case FormType["register"]:
-						res = await signUp(data.email, data.password);
-						//TODO: redirect to onbaording flow if successful or move to end of stack
-						if (res) {
-							router.replace("/onboarding/personal");
-						}
+						res = await signUp({
+							...onboardingData,
+							email: data.email,
+							password: data.password,
+						});
 						break;
 					default:
 						break;

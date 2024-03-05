@@ -29,3 +29,16 @@ export interface SingleInputProps {
 	value: string;
 	label: string;
 }
+
+export interface OnboardingProps {
+	email: string;
+	password: string;
+	username: string;
+	age: string;
+	workingHours: string;
+	freeHours: string;
+	familyAndFriendsHours: string;
+	obligations: string;
+	goals: string[];
+	plan: string;
+}

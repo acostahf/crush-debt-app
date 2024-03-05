@@ -4,7 +4,6 @@ export default () => {
 	return (
 		<Stack screenOptions={{ headerTransparent: true, headerTitle: "" }}>
 			<Stack.Screen name="index" />
-			<Stack.Screen name="welcome" />
 			<Stack.Screen name="goals" />
 			<Stack.Screen name="obligations" />
 			<Stack.Screen name="personal" />
